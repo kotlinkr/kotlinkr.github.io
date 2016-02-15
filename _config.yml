@@ -1,0 +1,9 @@
+# Site settings
+title: Kotlin Korea
+email: your-email@domain.com
+description: Kotlin 언어 한국 사용자 모임입니다.
+url: "https://kotlin.kr"
+username: kotlinkr
+
+# Build settings
+markdown: kramdown
