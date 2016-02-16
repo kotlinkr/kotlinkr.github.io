@@ -1,9 +1,15 @@
 # Site settings
 title: Kotlin Korea
+author: Kotlin Korea
 email: your-email@domain.com
 description: Kotlin 언어 한국 사용자 모임입니다.
 url: "http://kotlin.kr"
 username: kotlinkr
+logo_svg: /assets/images/kotlinkr.svg
+logo_png: /assets/images/kotlinkr.png
+icon_png: /assets/images/kotlinkr-icon.png
+logo_size: 256
+facebook_app_id: 172243503152254
 
 # Build settings
 markdown: kramdown

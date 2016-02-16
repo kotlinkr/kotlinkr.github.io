@@ -22,10 +22,51 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 	</noscript>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-	<link rel="shortcut icon" href="/assets/images/kotlinkr-icon.png" type="image/x-icon">
-	<link rel="icon" href="/assets/images/kotlinkr-icon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ site.icon_png }}" type="image/x-icon">
+	<link rel="icon" href="{{ site.icon_png }}" type="image/x-icon">
+
+	<meta property="og:url"              content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:type"             content="blog" />
+  <meta property="og:title"            content="{{ site.title }}" />
+  <meta property="twitter:title"       content="{{ site.title }}" />
+	<meta property="og:site_name"        content="{{ page.title }}" />
+	<meta property="twitter:site"        content="{{ page.title }}" />
+
+	<meta property="fb:app_id"           content="{{ site.facebook_app_id }}">
+  <meta property="og:image:height"     content="{{ site.logo_size }}">
+  <meta property="og:image:width"      content="{{ site.logo_size }}">
+  <meta property="og:image"            content="{{ site.url }}/{{ site.logo_png }}"/>
+  <meta property="twitter:image"       content="{{ site.url }}/{{ site.logo_png }}" />
+  <meta property="twitter:creator"     content="{{ site.author }}" />
+
+	{% if page.description %}
+	<meta property="og:description"      content="{{ page.description }}" />
+  <meta property="twitter:description" content="{{ page.description }}" />
+	{% else %}
+	<meta property="og:description"      content="{{ site.description }}" />
+  <meta property="twitter:description" content="{{ site.description }}" />
+	{% endif %}
+
 </head>
 <body>
+	<!-- Facebook -->
+	<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '{{ site.facebook_app_id }}',
+			xfbml      : true,
+			version    : 'v2.5'
+		});
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
 
 	<!-- Header -->
 	<div id="header">
