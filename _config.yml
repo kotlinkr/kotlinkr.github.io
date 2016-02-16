@@ -10,6 +10,7 @@ logo_png: /assets/images/kotlinkr.png
 icon_png: /assets/images/kotlinkr-icon.png
 logo_size: 256
 facebook_app_id: 172243503152254
+google_analytics_id: UA-73838755-1
 
 # Build settings
 markdown: kramdown
