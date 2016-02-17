@@ -7,10 +7,10 @@ description: "Hello Kotlin Korea :)"
 
 Kotlin Korea 입니다.
 
-{% highlight kotlin %}
+```kotlin
 package kr.kotlin
 
 fun main(args: Array<String>) {
     println("Hello Kotlin Korea!")
 }
-{% endhighlight %}
+```
