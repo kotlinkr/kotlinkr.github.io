@@ -15,7 +15,6 @@ paginate: 5
 paginate_path: "/blog/page:num/"
 
 # Build settings
-highlighter: pygments
 kramdown:
   input: GFM
   hard_wrap: false
