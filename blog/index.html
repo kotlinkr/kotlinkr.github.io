@@ -10,6 +10,11 @@ description: Kotlin Korea Blog 입니다.
 		{% for post in paginator.posts %}
 		<div class="row">
 			<section class="8u -2u">
+				{% if post.featured %}
+					<a href="{{ site.prefix }}{{ post.url }}" class="image full">
+						<img src="/assets/{{ post.featured }}" alt="">
+					</a>
+				{% endif %}
 				<header>
 					<h2>{{ post.title }}</h2>
 				</header>
