@@ -2,20 +2,44 @@
 layout: default
 ---
 <!-- Main -->
-	<div id="main">
-		<div id="content" class="container">
-			<div class="row">
-				<section class="8u -2u">
-					{% if page.featured %}
+<div id="main">
+	<div id="content" class="container">
+		<div class="row">
+			<section class="8u -2u">
+				{% if page.featured %}
 					<a href="{{ site.prefix }}{{ page.url }}" class="image full">
 						<img src="/assets/{{ page.featured }}" alt="">
 					</a>
-					{% endif %}
-					<header>
-						<h2>{{ page.title }}</h2>
-					</header>
+				{% endif %}
+
+				<header>
+					<h2>{{ page.title }}</h2>
+				</header>
+
+				<div class="post-info">
+					<span class="post-user">
+						<span class="fa fa-user"></span>
+						{% if page.author %}
+						<span>{{ page.author }}</span>
+						{% else %}
+						<span>{{ site.author }}</span>
+						{% endif %}
+					</span>
+
+				  {% if page.date %}
+					<span class="post-date">
+						<span class="fa fa-calendar"></span>
+						<span>{{ page.date | date_to_string }}</span>
+					</span>
+				  {% endif %}
+				</div>
+
+				<br />
+
+				<article class="reset-this markdown-body">
 					{{ page.content }}
-				</section>
-			</div>
+				</article>
+			</section>
 		</div>
 	</div>
+</div>

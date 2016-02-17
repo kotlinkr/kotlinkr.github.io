@@ -1,0 +1,27 @@
+---
+---
+
+@charset "UTF-8";
+@import "syntax-highlighting";
+
+#main h1,h2,h3,h4,h5,h6 {
+	color: #212121;
+}
+
+.post-info {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.post-date {
+	margin-left: 10px;
+}
+
+.pagination {
+	text-align: center;
+}
+
+.pagination .prev, .next, .page-num {
+	margin-left: 2px;
+	margin-right: 2px;
+}
