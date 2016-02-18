@@ -15,9 +15,8 @@ Kotlin에 대해 이야기를 나누는 자리가 열립니다. :tada:
 
 ## 왜?
 
-며칠 전, 드디어 Kotlin 버전이 1.0에 도달했습니다. :fire:\_:fire:)/
+며칠 전, 드디어 Kotlin 버전이 [1.0에 도달][1.0]했습니다. :fire:\_:fire:)/
 
-https://twitter.com/kotlin/status/699218188714840066
 
 [페이스북 페이지][facebook-page]에 공유된 글들 가운데 확실히 1.0 관련 글에 대한 관심이 높았는데,
 과연 어떤 분들이 관심을 가지고 있고, 그 관심을 넘어서 실제로 사용하고 계신 분들은 어떻게 활용하고 계신지 궁금하실 것으로 생각됩니다.
@@ -54,3 +53,4 @@ https://twitter.com/kotlin/status/699218188714840066
 [facebook-page]: https://www.facebook.com/kotlinkr/
 [meetup]: https://www.meetup.com/kotlinkr/
 [blog]: http://kotlin.kr/blog
+[1.0]: https://twitter.com/kotlin/status/699218188714840066
