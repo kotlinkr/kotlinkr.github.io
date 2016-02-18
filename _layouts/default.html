@@ -14,8 +14,8 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 
 	<title>{{ title }}</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+	<meta name="theme-color" content="#161616">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
 	<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -32,6 +32,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="shortcut icon" href="{{ site.icon_png }}" type="image/x-icon">
 	<link rel="icon" href="{{ site.icon_png }}" type="image/x-icon">
+	<link rel="icon" href="{{ site.logo_png }}" sizes="192x192">
 
 	<meta property="og:url"              content="{{ site.url }}{{ page.url }}" />
   <meta property="og:type"             content="blog" />
@@ -52,9 +53,11 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 	{% endif %}
 
 	{% if page.description %}
+	<meta name="description"             content="{{ page.description }}" />
 	<meta property="og:description"      content="{{ page.description }}" />
   <meta property="twitter:description" content="{{ page.description }}" />
 	{% else %}
+	<meta name="description"             content="{{ site.description }}" />
 	<meta property="og:description"      content="{{ site.description }}" />
   <meta property="twitter:description" content="{{ site.description }}" />
 	{% endif %}
