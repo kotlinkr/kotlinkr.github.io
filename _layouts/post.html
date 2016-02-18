@@ -7,7 +7,7 @@ layout: default
 		<div class="row">
 			<section class="8u -2u">
 				{% if page.featured %}
-					<a href="{{ site.prefix }}{{ page.url }}" class="image full">
+					<a href="{{ page.url }}" class="image full">
 						<img class="round" src="/assets/{{ page.featured }}" alt="">
 					</a>
 					<br />
@@ -40,6 +40,8 @@ layout: default
 				<article class="markdown-body">
 					{{ page.content }}
 				</article>
+
+				{% include fb-like.html %}
 			</section>
 		</div>
 	</div>

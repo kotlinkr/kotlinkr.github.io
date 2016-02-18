@@ -11,7 +11,7 @@ description: Kotlin Korea Blog 입니다.
 		<div class="row">
 			<section class="8u -2u">
 				{% if post.featured %}
-					<a href="{{ site.prefix }}{{ post.url }}" class="image full">
+					<a href="{{ post.url }}" class="image full">
 						<img class="round" src="/assets/{{ post.featured }}" alt="">
 					</a>
 					<br />
@@ -41,7 +41,7 @@ description: Kotlin Korea Blog 입니다.
 					{{ post.excerpt }}
 				</div>
 				<br />
-				<a href="{{ site.prefix }}{{ post.url }}" class="button button-style1">Read More</a>
+				<a href="{{ post.url }}" class="button button-style1">Read More</a>
 			</section>
 		</div>
 		{% endfor %}
