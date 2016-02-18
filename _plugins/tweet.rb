@@ -1,57 +1,46 @@
-# Tweet Liquid Tag
-#
-# Example:
-#   {% tweet 464180168303456256 %}
-#
+require "open-uri"
+require "json"
 
-require 'net/http'
-require 'json'
-
-module Jekyll
-  class TweetTag < Liquid::Tag
-
-    #
-    #
-    #
-    def render(context)
-
-      if tag_contents = determine_arguments(@markup.strip)
-        tweet_id = tag_contents #
-        tweet_script_tag(tweet_id)
-      else
-        raise ArgumentError.new <<-eos
-           Syntax error
-          eos
-      end
-
-    end
-
-   private
-
-   #
-   #
-   #
-   def determine_arguments(input)
-
-    return input
-
-   end
-
-   #
-   #
-   #
-   def tweet_script_tag(tweet_id)
-
-      result = Net::HTTP.get(URI.parse("https://api.twitter.com/1/statuses/oembed.json?id=#{tweet_id}"))
-      json   = JSON.parser.new(result)
-      hash   =  json.parse()
-      parsed = hash['html']
-
-      return parsed
-
-   end
-
+# convert tweet url to embedding html
+def embedding_tweet(content)
+  embedded_content = content
+  content.scan(/(https?:\/\/twitter\.com\/[a-zA-Z0-9_]+\/status\/([0-9]+)\/?)/).each do |url, id|
+    tweet_json = open("https://api.twitter.com/1/statuses/oembed.json?id=#{id}").read
+    tweet_html = JSON.parse(tweet_json, { :symbolize_names => true })[:html]
+    embedded_content = embedded_content.gsub(/#{url}/, tweet_html)
   end
+  embedded_content
 end
 
-Liquid::Template.register_tag('tweet', Jekyll::TweetTag)
+module Jekyll
+
+  # for markdown, extend oroginal parser's convert method
+  module Converters
+    class Markdown < Converter
+      alias_method :parser_converter, :convert
+
+      def convert(content)
+        parser_converter(embedding_tweet(content))
+      end
+    end
+  end
+
+  # for html, extend converter as a plugin
+  class EmbeddingTweetIntoHTML < Converter
+    safe true
+    priority :low
+
+    def matches(ext)
+      ext =~ /^\.html$/i
+    end
+
+    def output_ext(ext)
+      ".html"
+    end
+
+    def convert(content)
+      embedding_tweet(content)
+    end
+  end
+
+end
