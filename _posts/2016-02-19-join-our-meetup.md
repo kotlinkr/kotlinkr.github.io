@@ -40,7 +40,7 @@ Kotlin에 대해 이야기를 나누는 자리가 열립니다. :tada:
 
 - :coffee: 가벼운 티타임
 - :eyes: 기술공유 및 토론 :busts_in_silhouette:
-  - :computer: 기술 공유를 하고 싶은 분은 언제든지 연락주세요! (@importre)
+  - :computer: 기술 공유를 하고 싶은 분은 언제든지 연락주세요! (<mailto:hi@kotlin.kr>)
 - 코드랩
 - 등등등
 
