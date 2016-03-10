@@ -44,16 +44,9 @@ Java 서버개발하시는 분깨서 코틀린과 스칼라를 두고 뭐가 좋
 [[1]][realm-kotlin-1], [[2]][realm-kotlin-2], [[3]][realm-kotlin-3] 중에서
 [[2]][realm-kotlin-2]의 `객체 없는 함수`를 잠깐 언급해주셨습니다.
 
-> 참고로 내용을 추가하자면 아래와 같이 @JvmName 어노테이션을 이용하면
+> 참고로 내용을 추가하자면 @JvmName 어노테이션을 이용하면
 > 컴파일된 클래스 이름을 바꿀 수 있고, 자바에서 바꾼 이름으로 사용할 수 있습니다.  
-> * [Package-Level Functions][pkg-level-func]
-
-```kotlin
-@file:JvmName("DemoUtils")
-
-package demo
-...
-```
+> [Package-Level Functions][pkg-level-func]
 
 오늘의 주제인 코틀린과 Realm을 함께 사용하는 방법은 [슬라이드][kotlin-with-realm]를 참고해주세요!
 `Realm 0.88`부터는 `kapt`를 디펜던시에 걸지 않고(6페이지), 오직 플러그인만 설정하면 사용할 수 있다고 합니다.
