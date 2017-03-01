@@ -1,3 +1,5 @@
 _site/
 .sass-cache/
 .tweet-cache/
+.DS_Store
+.*.swp
